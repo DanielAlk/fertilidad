@@ -1,3 +1,6 @@
+<% content_for :extra_js do %>
+	Utils.scroller();
+<% end %>
 <footer>
 	<div class="container footer-top">
 		<div class="row">
@@ -55,7 +58,7 @@
 				</small>
 			</p>
 			<div class="text-center">
-				<a href="javascript:void(0);"><%= image_tag 'footer-arrow-up.jpg', class: 'footer-arrow-up' %></a>
+				<a href="javascript:void(0);" data-scroll="header"><%= image_tag 'footer-arrow-up.jpg', class: 'footer-arrow-up' %></a>
 			</div>
 		</div>
 	</div>
