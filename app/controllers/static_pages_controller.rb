@@ -8,5 +8,8 @@ class StaticPagesController < ApplicationController
   
   def images
   end
+  
+  def instructional
+  end
 
 end
