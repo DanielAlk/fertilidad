@@ -17,5 +17,8 @@ class StaticPagesController < ApplicationController
   
   def insemination
   end
+  
+  def contact
+  end
 
 end
