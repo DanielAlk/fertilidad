@@ -6,4 +6,7 @@ class StaticPagesController < ApplicationController
   def institutional
   end
   
+  def images
+  end
+
 end

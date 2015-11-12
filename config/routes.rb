@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   root 'static_pages#home'
   
   get 'static_pages/institutional', as: :institutional
+  get 'static_pages/images', as: :images
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
