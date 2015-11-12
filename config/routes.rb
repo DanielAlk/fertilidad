@@ -6,13 +6,13 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'static_pages#home'
   
-  get 'static_pages/institutional', as: :institutional
-  get 'static_pages/images', as: :images
-  get 'static_pages/instructional', as: :instructional
-  get 'static_pages/spermogram', as: :spermogram
-  get 'static_pages/insemination', as: :insemination
-  get 'static_pages/contact', as: :contact
-  get 'static_pages/downloads', as: :downloads
+  get 'institucional' => 'static_pages#institutional', as: :institutional
+  get 'imagenes' => 'static_pages#images', as: :images
+  get 'instructivos' => 'static_pages#instructional', as: :instructional
+  get 'espermograma' => 'static_pages#spermogram', as: :spermogram
+  get 'inseminacion' => 'static_pages#insemination', as: :insemination
+  get 'contacto' => 'static_pages#contact', as: :contact
+  get 'descargas' => 'static_pages#downloads', as: :downloads
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
