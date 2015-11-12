@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'static_pages/institutional', as: :institutional
   get 'static_pages/images', as: :images
   get 'static_pages/instructional', as: :instructional
+  get 'static_pages/spermogram', as: :spermogram
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

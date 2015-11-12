@@ -11,5 +11,8 @@ class StaticPagesController < ApplicationController
   
   def instructional
   end
+  
+  def spermogram
+  end
 
 end
