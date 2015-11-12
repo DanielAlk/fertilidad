@@ -14,5 +14,8 @@ class StaticPagesController < ApplicationController
   
   def spermogram
   end
+  
+  def insemination
+  end
 
 end
