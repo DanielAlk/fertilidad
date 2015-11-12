@@ -1,0 +1,15 @@
+.slider { position: relative; height: 1000px; color: #FFF; }
+.slide-container { position: absolute; top: 0; left: 0; width: 100%; }
+.slide:not(.active) { display: none; }
+.slide { position: relative; height: 1000px; background-size: cover; background-position: center center; }
+.bg-slide1 { background-image: url(<%= asset_path 'slide1.jpg' %>); }
+.bg-slide2 { background-image: url(<%= asset_path 'slide2.jpg' %>); }
+.bg-slide3 { background-image: url(<%= asset_path 'slide3.jpg' %>); }
+.slide .container { padding-top: 250px; }
+.slide .container p { max-width: 600px; margin: 35px 0; }
+
+.slider-indicators { position: absolute; top: 700px; width: 100%; text-align: center; }
+.slider-indicators span { display: inline-block; width: 34px; height: 5px; background-color: rgba(255,255,255,0.5); }
+.slider-indicators a:hover span, .slider-indicators a:focus span, .slider-indicators a:active span, .slider-indicators a.active span { background-color: #FFF; }
+
+.slider-footer { position: absolute; width: 100%; left: 0; bottom: 0; padding-bottom: 30px; }

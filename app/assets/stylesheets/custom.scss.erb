@@ -1,0 +1,68 @@
+body { font-family: 'Roboto Condensed', sans-serif; font-weight: 300; font-size: 16px; color: #575a5f; }
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { font-family: 'Oswald', sans-serif; font-weight: 300; }
+h2, .h2 { font-size: 42px; }
+h4, .h4 { font-size: 21px; }
+.roboto { font-family: 'Roboto Condensed', sans-serif; }
+.oswald { font-family: 'Oswald', sans-serif; }
+.light { font-weight: 300; }
+.normal { font-weight: 400; }
+.bold { font-weight: 700; }
+
+.relative {position: relative;}
+.absolute {position: absolute;}
+
+.max-x-400 { max-width: 400px !important; }
+.max-x-600 { max-width: 600px !important; }
+.max-x-800 { max-width: 800px !important; }
+
+.ratio-y-3 { height: 3em; width: auto; }
+.ratio-y-4 { height: 4em; width: auto; }
+.ratio-y-5 { height: 5em; width: auto; }
+
+.space-NS-20 { margin-top: 20px; margin-bottom: 20px; }
+.space-NS-30 { margin-top: 30px; margin-bottom: 30px; }
+.space-NS-40 { margin-top: 40px; margin-bottom: 40px; }
+.space-S-40 { margin-bottom: 40px; }
+
+.inspace-N-150 { padding-top: 150px; }
+
+.organize-S-10>* { margin-bottom: 10px; }
+.organize-S-20>* { margin-bottom: 20px; }
+.organize-S-30>* { margin-bottom: 30px; }
+
+.row.tight-5 { margin-left: -5px; margin-right: -5px; }
+.row.tight-5>div { padding-left: 5px; padding-right: 5px; }
+.row.tight-10 { margin-left: -10px; margin-right: -10px; }
+.row.tight-10>div { padding-left: 10px; padding-right: 10px; }
+
+.row-for-3 {float: left;}
+.row-for-3>div {float: left; width: 33.33%;}
+
+ul { padding-left: 22px; }
+img.cover { width: 100%; height: auto; }
+
+/* ICONS */
+.icon { font-style: inherit; font-weight: inherit; display: inline-block; background-size: auto 100%; }
+.icon.fecundation { background-image: url(<%= asset_path 'icons-fecundation.png' %>); height: 90px; }
+.icon.fecundation.first { background-position: 0 0; width: 150px; }
+.icon.fecundation.second { background-position: -177px 0; width: 52px; }
+.icon.fecundation.third { background-position: -272px 0; width: 90px; }
+
+.icon.social { background-image: url(<%= asset_path 'icons-social.png' %>); height: 20px; }
+.icon.social.facebook { background-position: 0 0; width: 10px; }
+.icon.social.twitter { background-position: -12px 0; width: 20px; }
+.icon.social.google { background-position: -34px 0; width: 27px; }
+.icon.social.instagram { background-position: -64px 0; width: 16px; }
+
+.icon.contact { background-image: url(<%= asset_path 'icons-contact.png' %>); height: 30px; }
+.icon.contact.location { background-position: 0 0; width: 20px; }
+.icon.contact.phone { background-position: -22px 0; width: 17px; }
+.icon.contact.mail { background-position: -41px 0; width: 21px; }
+
+/* BACKGROUNDS */
+.bg-ash { background-color: #3f4145; color: #FFF; }
+.bg-ash-dark { background-color: #2c2f31; color: #FFF; }
+.bg-couple-coffee { background-image: url(<%= asset_path 'couple-coffee.jpg' %>); background-size: cover; background-position: center center; color: #FFF; }
+.bg-mother-and-child { background-image: url(<%= asset_path 'mother-and-child.jpg' %>); background-size: cover; background-position: center center; color: #FFF; }
+.bg-team { background-image: url(<%= asset_path 'team.jpg' %>); background-size: cover; background-position: center center; color: #FFF; }
+.bg-downloads { background-image: url(<%= asset_path 'bg-downloads.jpg' %>); background-size: cover; background-position: center center; color: #FFF; }

@@ -1,0 +1,9 @@
+.btn { font-family: 'Oswald', sans-serif; font-weight: 300; border-radius: 3px; padding: 6px 26px; font-size: 16px; }
+.btn-default { background-color: transparent; color: #FFF; border-color: #FFF; }
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open > .btn-default.dropdown-toggle {
+	border-color: #FFF; color: #FFF; background-color: rgba(0,0,0,0.5);
+}
+.btn-primary { background-color: transparent; color: #575a5f; border-color: #575a5f; }
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .btn-primary.dropdown-toggle {
+	border-color: #FFF; color: #FFF; background-color: #575a5f;
+}
