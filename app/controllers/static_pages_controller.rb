@@ -20,5 +20,8 @@ class StaticPagesController < ApplicationController
   
   def contact
   end
+  
+  def downloads
+  end
 
 end

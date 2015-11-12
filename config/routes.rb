@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'static_pages/spermogram', as: :spermogram
   get 'static_pages/insemination', as: :insemination
   get 'static_pages/contact', as: :contact
+  get 'static_pages/downloads', as: :downloads
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
