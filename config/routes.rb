@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root 'static_pages#home'
   
   get 'institucional' => 'static_pages#institutional', as: :institutional
-  get 'imagenes' => 'static_pages#images', as: :images
+  get 'imagenes' => 'static_pages#images', as: :static_images
   get 'instructivos' => 'static_pages#instructional', as: :instructional
   get 'espermograma' => 'static_pages#spermogram', as: :spermogram
   get 'inseminacion' => 'static_pages#insemination', as: :insemination
