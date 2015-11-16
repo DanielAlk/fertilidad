@@ -1,0 +1,25 @@
+<%= form_for @image_gallery, :html => { :multipart => true } do |f| %>
+  <% if @image_gallery.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@image_gallery.errors.count, "error") %> prohibited this image_gallery from being saved:</h2>
+
+      <ul>
+      <% @image_gallery.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :title, class: 'control-label' %><br>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= label_tag 'gallery_images_', 'Imágenes', class: 'control-label' %><br>
+    <%= file_field_tag 'gallery_images[]', multiple: true, accept: 'image/*', class: 'form-control' %>
+  </div>
+  <div class="space-N-30">
+    <%= f.submit %>
+  </div>
+<% end %>

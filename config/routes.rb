@@ -6,8 +6,12 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'static_pages#home'
   
+  resources :image_galleries, path: 'imagenes' do
+    resources :image_gallery_items, path: 'items', as: :items, only: [:update, :destroy]
+  end
+  
   get 'institucional' => 'static_pages#institutional', as: :institutional
-  get 'imagenes' => 'static_pages#images', as: :static_images
+  get 'images' => 'static_pages#images', as: :static_images
   get 'instructivos' => 'static_pages#instructional', as: :instructional
   get 'espermograma' => 'static_pages#spermogram', as: :spermogram
   get 'inseminacion' => 'static_pages#insemination', as: :insemination
