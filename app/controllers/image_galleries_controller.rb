@@ -1,5 +1,5 @@
 class ImageGalleriesController < ApplicationController
-  before_action :set_image_gallery, only: [:show, :edit, :update, :destroy]
+  before_action :set_image_gallery, only: [:show, :edit, :update, :destroy, :update_items]
 
   # GET /image_galleries
   # GET /image_galleries.json
@@ -53,6 +53,14 @@ class ImageGalleriesController < ApplicationController
     end
   end
 
+  def update_items
+    params['items'].each do |item|
+      gallery_item = ImageGalleryItem.find(item['id'])
+      gallery_item.update(title: item['title'], text: item['text'])
+    end
+    redirect_to @image_gallery, notice: 'Image gallery was successfully updated.'
+  end
+
   # DELETE /image_galleries/1
   # DELETE /image_galleries/1.json
   def destroy
@@ -66,7 +74,7 @@ class ImageGalleriesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_image_gallery
-      @image_gallery = ImageGallery.friendly.find(params[:id])
+      @image_gallery = ImageGallery.friendly.find(params[:id] || params[:image_gallery_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
@@ -76,7 +84,7 @@ class ImageGalleriesController < ApplicationController
 
     def save_images
       params['gallery_images'].each do |image|
-        @image_gallery.image_gallery_items.create(image: image)
+        @image_gallery.items.create(image: image)
       end
     end
 end

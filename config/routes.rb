@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root 'static_pages#home'
   
   resources :image_galleries, path: 'imagenes' do
-    resources :image_gallery_items, path: 'items', as: :items, only: [:update, :destroy]
+    put 'update_items', path: 'items', as: :items
   end
   
   get 'institucional' => 'static_pages#institutional', as: :institutional

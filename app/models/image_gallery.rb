@@ -4,8 +4,13 @@ class ImageGallery < ActiveRecord::Base
 
 	has_many :image_gallery_items, :dependent => :destroy
 
+	def items
+		self.image_gallery_items
+	end
+
 	def cover
-		item = self.image_gallery_items.first
+		item = self.items.first
 		return item.present? ? item.image : "gallery-image-default-original.jpg"
 	end
+
 end
