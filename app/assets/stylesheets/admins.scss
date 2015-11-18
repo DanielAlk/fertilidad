@@ -1,0 +1,24 @@
+section.admin { padding-bottom: 70px; padding-top: 80px; }
+form div.field:first-of-type { margin-top: 30px; }
+form div.field { margin-bottom: 10px; }
+form div.field label { margin-bottom: 0; }
+form div.field input[type=text],
+form div.field input[type=email],
+form div.field input[type=password],
+form div.field input[type=url],
+form div.field textarea, form div.field select { display: block; width: 100%; }
+form div.field [type=checkbox], form div.field [type=radio] { margin-right: 5px; }
+form div.actions { margin-top: 20px; margin-bottom: 20px; }
+
+.admin-buttons { position: fixed; z-index: 99999; right: 5px; top: 36px; width: 120px; }
+.admin-buttons a { display: block; background-color: #D61B16; color: #FFF; padding: 10px; margin-bottom: 2px; }
+.admin-buttons a.edit { background-color: #d3d3d3; color: #000; }
+.admin-buttons a.destroy { background-color: #8A0000; }
+.admin-buttons a.show { background-color: #00ACDF; color: #FFF; padding: 5px 10px; }
+.admin-buttons>div { padding-top: 4px; }
+.admin-buttons>div>div { background-color: #FFF; text-align: center; font-size: 16px; font-weight: 800; border: 1px solid #000000; border-bottom: #FFF; padding: 2px 0; }
+
+.admin-info { position: fixed; z-index: 99999; top: 0; right: 0; background-color: rgba(245,245,245,0.7); padding: 3px 10px; margin: 5px; }
+
+section.admin ul { margin-bottom: 0; }
+section.admin ul li:not(:last-of-type) { margin-bottom: 5px; padding-bottom: 5px; border-bottom: 1px ridge; }

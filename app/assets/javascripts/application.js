@@ -13,5 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui/effect-slide
+//= require jquery.cookie
+//= require jquery.validate
+//= require jquery.validate.additional-methods
+//= require jquery.validate.localization/messages_es_AR
 //= require turbolinks
 //= require_tree .

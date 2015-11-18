@@ -11,15 +11,15 @@
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= f.label :title, class: 'control-label' %><br>
-    <%= f.text_field :title, class: 'form-control' %>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
   </div>
-  <div class="form-group">
-    <%= label_tag 'gallery_images_', 'Imágenes', class: 'control-label' %><br>
-    <%= file_field_tag 'gallery_images[]', multiple: true, accept: 'image/*', class: 'form-control' %>
+  <div class="field">
+    <%= label_tag 'gallery_images_', 'Imágenes' %><br>
+    <%= file_field_tag 'gallery_images[]', multiple: true, accept: 'image/*' %>
   </div>
-  <div class="space-N-30">
+  <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>

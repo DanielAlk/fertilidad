@@ -3,6 +3,9 @@
 		<h5 class="normal text-uppercase"><%= image_gallery.title %></h5>
 		<%= image_tag image_gallery.cover.url(:thumb), class: 'cover' %>
 	<% end %>
-	<%= link_to 'Edit', edit_image_gallery_path(image_gallery) %>
-	<%= link_to 'Destroy', image_gallery, method: :delete, data: { confirm: 'Are you sure?' } %>
+	<% if admin_signed_in? %>
+		<%= link_to 'Edit', edit_image_gallery_path(image_gallery) %> | 
+		<%= link_to 'Editar items', image_gallery %> | 
+		<%= link_to 'Destroy', image_gallery, method: :delete, data: { confirm: 'Are you sure?' } %>
+	<% end %>
 </div>

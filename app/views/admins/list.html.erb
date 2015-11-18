@@ -1,0 +1,12 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Lista de usuarios admin</h3>
+  </div>
+  <div class="panel-body">
+  	<ul class="list-unstyled">
+  		<% @admins.each do |admin| %>
+  			<li><%= admin.email %> <%= link_to 'Borrar cuenta', admin_path(id: admin), method: :delete, :data => { confirm: '¿Seguro?' }, class: 'pull-right' %></li>
+  		<% end %>
+  	</ul>
+  </div>
+</div>

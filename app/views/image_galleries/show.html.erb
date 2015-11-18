@@ -1,23 +1,38 @@
-<div class="main-image bg-images">
+<div class="main-image small bg-images">
   <div class="container">
-    <h2>IMÁGENES</h2>
+    <h2 class="text-uppercase"><%= @image_gallery.title %></h2>
   </div>
 </div>
 <section>
   <div class="container">
-  	<%= form_tag image_gallery_items_path(@image_gallery), method: :put do %>
+  	<% if admin_signed_in? and @show_as_regular_user.blank? %>
+		  <%= link_to 'Back', image_galleries_path %> | 
+		  <%= link_to 'Preview', image_gallery_preview_path(@image_gallery) %>
+	  	<%= form_tag image_gallery_items_path(@image_gallery), method: :put do %>
+		  	<div class="row tight-10 space-NS-40 organize-S-20">
+			  	<% @image_gallery.items.each do |item| %>
+				  	<div class="col-xs-3">
+				  		<%= hidden_field_tag 'items[]id', item.id %>
+				  		<%= text_field_tag 'items[]title', item.title, class: 'form-control', placeholder: 'Titulo de la foto' %>
+				  		<%= image_tag item.image.url(:thumb), class: 'cover' %>
+				  		<%= text_area_tag 'items[]text', item.text, class: 'form-control', rows: 4, placeholder: 'Descripción' %>
+				  	</div>
+			  	<% end %>
+		  	</div>
+		  	<%= submit_tag %>
+	  	<% end %>
+	  <% else %>
+		  <%= link_to 'Editar', @image_gallery if admin_signed_in? %>
 	  	<div class="row tight-10 space-NS-40 organize-S-20">
 		  	<% @image_gallery.items.each do |item| %>
 			  	<div class="col-xs-3">
-			  		<%= hidden_field_tag 'items[]id', item.id %>
-			  		<%= text_field_tag 'items[]title', item.title, class: 'form-control', placeholder: 'Titulo de la foto' %>
-			  		<%= image_tag item.image.url(:thumb), class: 'cover' %>
-			  		<%= text_area_tag 'items[]text', item.text, class: 'form-control', rows: 4, placeholder: 'Descripción' %>
+			  		<%= link_to '#', class: 'clean', data: { text: item.text, url: item.image.url } do %>
+				  		<h5 class="normal text-uppercase"><%= item.title %></h5>
+				  		<%= image_tag item.image.url(:thumb), class: 'cover' %>
+			  		<% end %>
 			  	</div>
 		  	<% end %>
-	  	</div>
-	  	<%= submit_tag %>
-  	<% end %>
-	  <%= link_to 'Back', image_galleries_path %>
+		  </div>
+	  <% end %>
   </div>
 </section>

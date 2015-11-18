@@ -21,5 +21,6 @@
  *= require card
  *= require forms
  *= require custom
+ *= require admins
  *= require_self
  */

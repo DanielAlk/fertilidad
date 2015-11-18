@@ -1,5 +1,7 @@
 class ImageGalleriesController < ApplicationController
-  before_action :set_image_gallery, only: [:show, :edit, :update, :destroy, :update_items]
+  before_action :authenticate_admin!, except: [:index, :show]
+  before_action :set_image_gallery, only: [:show, :edit, :update, :destroy, :update_items, :preview_items]
+  layout 'admin', only: [:new, :edit]
 
   # GET /image_galleries
   # GET /image_galleries.json
@@ -59,6 +61,11 @@ class ImageGalleriesController < ApplicationController
       gallery_item.update(title: item['title'], text: item['text'])
     end
     redirect_to @image_gallery, notice: 'Image gallery was successfully updated.'
+  end
+
+  def preview_items
+    @show_as_regular_user = true;
+    render :show
   end
 
   # DELETE /image_galleries/1
