@@ -90,8 +90,10 @@ class ImageGalleriesController < ApplicationController
     end
 
     def save_images
-      params['gallery_images'].each do |image|
-        @image_gallery.items.create(image: image)
+      if params['gallery_images'].present?
+        params['gallery_images'].each do |image|
+          @image_gallery.items.create(image: image)
+        end
       end
     end
 end
