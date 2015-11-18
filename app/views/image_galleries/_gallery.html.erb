@@ -1,0 +1,23 @@
+<div class="modal fade gallery" aria-hidden="false" id="imageGallery">
+  <div class="modal-dialog gallery-resize">
+	  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+	  <div class="gallery-items">
+	  	<% items.each do |item| %>
+	  		<div class="gallery-item-container">
+	  			<div class="gallery-item" data-id="<%= item.id %>">
+	  				<h3><%= item.title %></h3>
+	  				<%= image_tag item.image.url %>
+	  				<p><%= item.text %></p>
+	  			</div>
+	  		</div>
+	  	<% end %>
+	  </div>
+	  <div class="gallery-controls gallery-resize">
+	  	<a href="javascript:void(0);" class="gallery-prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+	  	<a href="javascript:void(0);" class="gallery-next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+	  </div>
+	</div>
+</div>
+<% content_for :extra_js do %>
+	$('#imageGallery').gallery();
+<% end %>
