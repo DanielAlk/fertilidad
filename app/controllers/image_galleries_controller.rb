@@ -92,7 +92,7 @@ class ImageGalleriesController < ApplicationController
     def save_images
       if params['gallery_images'].present?
         params['gallery_images'].each do |image|
-          @image_gallery.items.create(image: image)
+          @image_gallery.items.create(title: image.original_filename,image: image)
         end
       end
     end
