@@ -17,6 +17,7 @@ $.fn.gallery = function(href) {
 			var img = $item.find('img').get(0);
 			var height = img.naturalHeight;
 			var width = img.naturalWidth;
+			var textHeight = $item.find('p').length && $item.find('p').get(0).offsetHeight;
 			if (window.matchMedia('(min-width: 992px)').matches) {
 				if (width > 800) {
 					height = height * 800 / width;
@@ -33,7 +34,7 @@ $.fn.gallery = function(href) {
 			};
 			if (!$gallery.is('.in') || height == 'auto') $resizeAll.css({ width: width, height: height });
 			else {
-				$resize.animate({ width: width, height: height + $item.find('p').get(0).offsetHeight });
+				$resize.animate({ width: width, height: height + textHeight });
 				$resizeExact.animate({ width: width, height: height });
 			};
 		};

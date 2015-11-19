@@ -35,7 +35,7 @@
 		  	<% @image_gallery.items.each do |item| %>
 			  	<div class="col-xs-6 col-sm-3">
 			  		<%= link_to item, class: gallery_item_class, data: { text: item.text, url: item.image.url, id: item.id } do %>
-				  		<h5 class="normal text-uppercase"><%= item.title %></h5>
+				  		<h5 class="normal text-uppercase ellipsis"><%= item.title %>&nbsp;</h5>
 				  		<%= image_tag item.image.url(:thumb), class: 'cover' %>
 			  		<% end %>
 			  	</div>

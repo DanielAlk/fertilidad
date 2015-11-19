@@ -6,10 +6,14 @@
 	  		<div class="gallery-item-container">
 	  			<div class="gallery-item" data-id="<%= item.id %>">
 	  				<%= image_tag item.image.url %>
-	  				<p>
-	  					<big class="oswald"><%= item.title %></big><br>
-	  					<%= item.text %>
-	  				</p>
+	  				<% if item.title.present? or item.text.present? %>
+		  				<p>
+		  					<% if item.title.present? %>
+			  					<big class="oswald"><%= item.title %></big>
+		  					<% end %>
+		  					<span><%= item.text if item.text.present? %></span>
+		  				</p>
+	  				<% end %>
 	  			</div>
 	  		</div>
 	  	<% end %>

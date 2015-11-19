@@ -8,9 +8,9 @@ $gallery-background: rgba(0, 0, 0, 0.7);
 .gallery-item:not(.active) { display:none; }
 .gallery-item p {
 	position: absolute; margin: 0; width: 100%; color: #FFF; top: 100%; 
-	background-color: $gallery-background; left: 0; padding: 8px 18px 18px;
+	background-color: $gallery-background; left: 0; padding: 8px 18px 10px;
 }
-.gallery-item p big { font-size: 1.6em; }
+.gallery-item p big { font-size: 1.6em; display: block; }
 .gallery-item h3 {
 	position: absolute; margin: 0; background-color: $gallery-background; 
 	width: 100%; top: 0; left: 0; padding: 15px 18px 8px; color: #FFF;
