@@ -18,6 +18,10 @@ $.fn.gallery = function(href) {
 			var height = img.naturalHeight;
 			var width = img.naturalWidth;
 			var textHeight = $item.find('p').length && $item.find('p').get(0).offsetHeight;
+			if (width < 320) {
+				height = height * 320 / width;
+				width = 320;
+			};
 			if (window.matchMedia('(min-width: 992px)').matches) {
 				if (width > 800) {
 					height = height * 800 / width;
