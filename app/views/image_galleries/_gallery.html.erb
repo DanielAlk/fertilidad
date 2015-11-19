@@ -5,14 +5,16 @@
 	  	<% items.each do |item| %>
 	  		<div class="gallery-item-container">
 	  			<div class="gallery-item" data-id="<%= item.id %>">
-	  				<h3><%= item.title %></h3>
 	  				<%= image_tag item.image.url %>
-	  				<p><%= item.text %></p>
+	  				<p>
+	  					<b><big class="oswald"><%= item.title %></big></b><br>
+	  					<%= item.text %>
+	  				</p>
 	  			</div>
 	  		</div>
 	  	<% end %>
 	  </div>
-	  <div class="gallery-controls gallery-resize">
+	  <div class="gallery-controls gallery-resize-exact">
 	  	<a href="javascript:void(0);" class="gallery-prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
 	  	<a href="javascript:void(0);" class="gallery-next"><i class="glyphicon glyphicon-chevron-right"></i></a>
 	  </div>

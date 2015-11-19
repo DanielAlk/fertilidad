@@ -3,6 +3,8 @@ $.fn.gallery = function(href) {
 		var gallery = this;
 		var $gallery = $(gallery);
 		var $resize = $gallery.find('.gallery-resize');
+		var $resizeExact = $gallery.find('.gallery-resize-exact');
+		var $resizeAll = $gallery.find('.gallery-resize-exact, .gallery-resize');
 		var $transition = $gallery.find('.gallery-resize-transition');
 		var $items = $gallery.find('.gallery-item');
 		var $controls = $gallery.find('.gallery-controls a, .gallery-item img');
@@ -29,8 +31,11 @@ $.fn.gallery = function(href) {
 				height = 'auto';
 				width = 'auto';
 			};
-			if (!$gallery.is('.in') || height == 'auto') $resize.css({ width: width, height: height });
-			else $resize.animate({ width: width, height: height + $item.find('p').get(0).offsetHeight });
+			if (!$gallery.is('.in') || height == 'auto') $resizeAll.css({ width: width, height: height });
+			else {
+				$resize.animate({ width: width, height: height + $item.find('p').get(0).offsetHeight });
+				$resizeExact.animate({ width: width, height: height });
+			};
 		};
 		var slide = function(e) {
 			var $item = $items.filter('.active');
