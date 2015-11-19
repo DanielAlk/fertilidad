@@ -1,12 +1,13 @@
+$gallery-background: rgba(0, 0, 0, 0.35);
 .modal.gallery button.close { position: absolute; display: block; right: 0; top: 0; font-size: 35px; height: 25px; width: 25px; line-height: 25px; color: #FFF; opacity: 1; text-shadow: 0px 0px 4px saddlebrown; z-index: 999; text-align: center; background-color: rgba(158, 23, 23, 0.57); padding-left: 2px; }
 .modal.gallery .modal-dialog { margin-top: 60px; }
 .gallery-items { position: absolute; top: 0; left: 0; width: 100%; }
-.gallery-item-container { position: absolute; top: 0; left: 0; width: 100%; background-color: blanchedalmond; }
-.gallery-item { position: relative; padding: 10px; }
+.gallery-item-container { position: absolute; top: 0; left: 0; width: 100%; background-color: $gallery-background; }
+.gallery-item { position: relative; border: 10px solid $gallery-background; }
 .gallery-item img { width: 100%; height: auto; border: 1px solid; }
 .gallery-item:not(.active) { display:none; }
-.gallery-item p { margin: 10px 0 0; }
-.gallery-item h3 { margin: 0 0 10px; }
+.gallery-item p { margin: 10px 0 0; position: absolute; width: 100%; color: #FFF; bottom: 0; background-color: $gallery-background; left: 0; padding: 8px 18px 18px; }
+.gallery-item h3 { position: absolute; margin: 0 0 10px; background-color: $gallery-background; width: 100%; top: 0; left: 0; padding: 15px 18px 8px; color: #FFF; }
 
 .gallery-controls { position: absolute; width: 100%; }
 .gallery-controls a {
@@ -24,3 +25,9 @@
 a.gallery-next { float: right; text-align: right; }
 a.gallery-prev { float: left; }
 .gallery-controls a i { display: block; position: relative; top: 50%; margin-top: -10px; }
+
+.mobile-gallery { position: relative; }
+.mobile-gallery-controls { position: absolute; width: 100%; top: 50%; font-size: 27px; }
+.mobile-gallery-controls a { color: rgba(255,255,255,0.8); text-shadow: 0px 0px 9px rgba(0, 0, 0, 0.8); }
+a.mobile-gallery-prev { float: left; margin-left: 5px; }
+a.mobile-gallery-next { float: right; margin-right: 5px; }

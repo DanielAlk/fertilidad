@@ -1,6 +1,7 @@
 class StaticPagesController < ApplicationController
   
   def home
+    @image_galleries = ImageGallery.take(8)
   end
 
   def institutional

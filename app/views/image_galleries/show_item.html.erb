@@ -1,0 +1,28 @@
+<div class="main-image small bg-images">
+  <div class="container">
+    <h2 class="text-uppercase">Imágenes</h2>
+  </div>
+</div>
+<section>
+  <div class="container">
+  	<ol class="breadcrumb" style="<%= 'margin-top:15px;' if admin_signed_in? %>">
+  	  <li><a href="<%= image_galleries_path %>">Inicio</a></li>
+  	  <li><%= link_to @image_gallery.title, @image_gallery %></li>
+  	  <li class="active"><%= @image_gallery_item.title %></li>
+  	</ol>
+  	<div>
+  		<div class="mobile-gallery">
+  			<div class="mobile-gallery-controls">
+  				<%= link_to @image_gallery_item.prev, class: 'mobile-gallery-prev' do %>
+  					<i class="glyphicon glyphicon-chevron-left"></i>
+					<% end %>
+  				<%= link_to @image_gallery_item.next, class: 'mobile-gallery-next' do %>
+  					<i class="glyphicon glyphicon-chevron-right"></i>
+					<% end %>
+  			</div>
+  			<%= image_tag @image_gallery_item.image.url(:thumb), class: 'cover' %>
+  			<p><%= @image_gallery_item.text %></p>
+  		</div>
+	  </div>
+  </div>
+</section>

@@ -5,7 +5,7 @@ $.fn.gallery = function(href) {
 		var $resize = $gallery.find('.gallery-resize');
 		var $transition = $gallery.find('.gallery-resize-transition');
 		var $items = $gallery.find('.gallery-item');
-		var $controls = $gallery.find('.gallery-controls a');
+		var $controls = $gallery.find('.gallery-controls a, .gallery-item img');
 		var $triggers = $('.gallery-trigger');
 		var activate = function() {
 			$(this).addClass('active');
@@ -29,13 +29,13 @@ $.fn.gallery = function(href) {
 				height = 'auto';
 				width = 'auto';
 			};
-			if (height != 'auto') height = height + 80;
-			if ($item.length == undefined) $resize.css({ width: width, height: height });
+			if (height != 'auto') height+=10;
+			if ($item.length == undefined || height == 'auto') $resize.css({ width: width, height: height });
 			else $resize.animate({ width: width, height: height });
 		};
 		var slide = function(e) {
 			var $item = $items.filter('.active');
-			if ($(this).is('.gallery-next')) $next = $item.is($items.last()) ? $items.first() : $items.eq($items.index($item)+1);
+			if ($(this).is('.gallery-next, img')) $next = $item.is($items.last()) ? $items.first() : $items.eq($items.index($item)+1);
 			else $next = $item.is($items.first()) ? $items.last() : $items.eq($items.index($item)-1);
 			$item.hide();
 			$items.removeClass('active');
@@ -51,5 +51,6 @@ $.fn.gallery = function(href) {
 			resize();
 			$gallery.modal('show');
 		});
+		window.matchMedia('(min-width: 768px) and (max-width: 991px)').addListener(resize);
 	});
 };

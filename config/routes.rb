@@ -14,7 +14,9 @@ Rails.application.routes.draw do
     sessions: 'admins/sessions', 
     passwords: 'admins/passwords'
   }
-  
+
+  get 'imagenes/item/:id' => 'image_galleries#show_item', as: :image_gallery_item
+  match 'imagenes/item/:id' => 'image_galleries#destroy_item', via: :delete
   resources :image_galleries, path: 'imagenes' do
     get 'preview_items', path: 'preview', as: :preview
     put 'update_items', path: 'items', as: :items
