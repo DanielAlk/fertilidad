@@ -46,10 +46,17 @@ $.fn.gallery = function(href) {
 			var $item = $items.filter('.active');
 			if ($(this).is('.gallery-next, img')) $next = $item.is($items.last()) ? $items.first() : $items.eq($items.index($item)+1);
 			else $next = $item.is($items.first()) ? $items.last() : $items.eq($items.index($item)-1);
-			$item.hide();
-			$items.removeClass('active');
-			$next.fadeIn(activate);
+			$items.hide().removeClass('active');
+			$items.stop(true,true);
+			$resizeAll.stop(true,true);
+			$next.addClass('active').fadeIn();
 			resize($next);
+		};
+		var key = function(e) {
+			switch(e.which) {
+				case 37: $controls.filter('.gallery-prev').triggerHandler('click'); break;
+				case 39: $controls.filter('.gallery-next').triggerHandler('click'); break;
+			};
 		};
 		$controls.click(slide);
 		$triggers.click(function(e) {
@@ -59,6 +66,12 @@ $.fn.gallery = function(href) {
 			$items.filter('[data-id='+id+']').addClass('active').show();
 			resize();
 			$gallery.modal('show');
+		});
+		$gallery.on('shown.bs.modal', function() {
+			$(document).on('keyup', key);
+		});
+		$gallery.on('hidden.bs.modal', function() {
+			$(document).off('keyup', key);
 		});
 		window.matchMedia('(min-width: 768px) and (max-width: 991px)').addListener(resize);
 	});
