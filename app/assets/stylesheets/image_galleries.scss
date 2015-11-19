@@ -3,11 +3,17 @@ $gallery-background: rgba(0, 0, 0, 0.35);
 .modal.gallery .modal-dialog { margin-top: 60px; }
 .gallery-items { position: absolute; top: 0; left: 0; width: 100%; }
 .gallery-item-container { position: absolute; top: 0; left: 0; width: 100%; background-color: $gallery-background; }
-.gallery-item { position: relative; border: 10px solid $gallery-background; }
-.gallery-item img { width: 100%; height: auto; border: 1px solid; }
+.gallery-item { position: relative; }
+.gallery-item img { width: 100%; height: auto; }
 .gallery-item:not(.active) { display:none; }
-.gallery-item p { margin: 10px 0 0; position: absolute; width: 100%; color: #FFF; bottom: 0; background-color: $gallery-background; left: 0; padding: 8px 18px 18px; }
-.gallery-item h3 { position: absolute; margin: 0 0 10px; background-color: $gallery-background; width: 100%; top: 0; left: 0; padding: 15px 18px 8px; color: #FFF; }
+.gallery-item p {
+	position: absolute; margin: 0; width: 100%; color: #FFF; top: 100%; 
+	background-color: $gallery-background; left: 0; padding: 8px 18px 18px;
+}
+.gallery-item h3 {
+	position: absolute; margin: 0; background-color: $gallery-background; 
+	width: 100%; top: 0; left: 0; padding: 15px 18px 8px; color: #FFF;
+}
 
 .gallery-controls { position: absolute; width: 100%; }
 .gallery-controls a {

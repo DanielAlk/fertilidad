@@ -29,9 +29,8 @@ $.fn.gallery = function(href) {
 				height = 'auto';
 				width = 'auto';
 			};
-			if (height != 'auto') height+=10;
-			if ($item.length == undefined || height == 'auto') $resize.css({ width: width, height: height });
-			else $resize.animate({ width: width, height: height });
+			if (!$gallery.is('.in') || height == 'auto') $resize.css({ width: width, height: height });
+			else $resize.animate({ width: width, height: height + $item.find('p').get(0).offsetHeight });
 		};
 		var slide = function(e) {
 			var $item = $items.filter('.active');
