@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :downloads
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -28,7 +29,7 @@ Rails.application.routes.draw do
   get 'espermograma' => 'static_pages#spermogram', as: :spermogram
   get 'inseminacion' => 'static_pages#insemination', as: :insemination
   get 'contacto' => 'static_pages#contact', as: :contact
-  get 'descargas' => 'static_pages#downloads', as: :downloads
+  get 'downloads' => 'static_pages#downloads', as: :static_downloads
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
