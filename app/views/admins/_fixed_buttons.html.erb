@@ -4,15 +4,29 @@
 		<%= '<em>Usuario administrador</em>'.html_safe if current_admin.administrator? %>
 	</div>
 	<div class="admin-buttons">
-		<%= link_to 'Admin', admin_path %>
-		<%= link_to 'Sign out', destroy_admin_session_path, method: 'delete' %>
-		<%= link_to 'Nueva Galería', new_image_gallery_path %>
+		<div>
+			<%= link_to 'Admin', admin_path %>
+			<%= link_to 'Sign out', destroy_admin_session_path, method: 'delete' %>
+		</div>
+		<div>
+			<div>Crear</div>
+			<%= link_to 'Galería', new_image_gallery_path %>
+			<%= link_to 'Descarga', new_download_path %>
+		</div>
 		<% if @image_gallery.present? && @image_gallery.title.present? %>
 			<div>
 				<div>Galería</div>
 				<%= link_to @image_gallery.title, @image_gallery, class: 'show' %>
 				<%= link_to 'Edit', edit_image_gallery_path(@image_gallery), class: 'edit' %>
 				<%= link_to 'Destroy', @image_gallery, method: :delete, data: { confirm: 'Are you sure?' }, class: 'destroy' %>
+			</div>
+		<% end %>
+		<% if @download.present? && @download.title.present? %>
+			<div>
+				<div>File</div>
+				<%= link_to @download.title, @download, class: 'show' %>
+				<%= link_to 'Edit', edit_download_path(@download), class: 'edit' %>
+				<%= link_to 'Destroy', @download, method: :delete, data: { confirm: 'Are you sure?' }, class: 'destroy' %>
 			</div>
 		<% end %>
 	</div>

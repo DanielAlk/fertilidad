@@ -5,7 +5,7 @@
 	<div class="panel-body">
 		<%= link_to 'Editar usuario', edit_admin_registration_path, class: 'btn btn-info btn-block' %>
 		<%= link_to 'Sign out', destroy_admin_session_path, method: 'delete', class: 'btn btn-danger btn-block' %>
-		<%= link_to 'Borrar cuenta', admin_registration_path, method: 'delete', data: { confirm: 'Are you sure?' }, class: 'btn btn-primary btn-block' unless current_admin.administrator? %>
+		<%= link_to 'Borrar cuenta', admin_registration_path, method: 'delete', data: { confirm: 'Are you sure?' }, class: 'btn btn-warning btn-block' unless current_admin.administrator? %>
 	</div>
 </div>
 <div class="panel panel-default">
@@ -13,8 +13,10 @@
     <h3 class="panel-title">Admin Database</h3>
   </div>
   <div class="panel-body">
-  	<%= link_to 'Ver Galerías de imágenes', image_galleries_path, class: 'btn btn-block btn-primary' %>
-  	<%= link_to 'Nueva Galería de imágenes', new_image_gallery_path, class: 'btn btn-block btn-primary' %>
+  	<%= link_to 'Ver Galerías de imágenes', image_galleries_path, class: 'btn btn-block btn-warning' %>
+  	<%= link_to 'Nueva Galería de imágenes', new_image_gallery_path, class: 'btn btn-block btn-success' %>
+  	<%= link_to 'Ver Descargas', downloads_path, class: 'btn btn-block btn-warning' %>
+  	<%= link_to 'Nueva Descarga', new_download_path, class: 'btn btn-block btn-success' %>
   </div>
 </div>
 <% if current_admin.administrator? %>

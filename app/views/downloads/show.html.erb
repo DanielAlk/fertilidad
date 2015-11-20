@@ -1,14 +1,28 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @download.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @download.description %>
-</p>
-
-<%= link_to 'Edit', edit_download_path(@download) %> |
-<%= link_to 'Back', downloads_path %>
+<div class="main-image bg-downloads">
+  <div class="container">
+    <h2>DESCARGAS</h2>
+  </div>
+</div>
+<section>
+  <div class="container">
+    <div class="row tight-10 space-NS-40 organize-S-20">
+    	<div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+    		<div class="card">
+    			<div class="card-band">
+    				<i class="icon mime <%= @download.type %>"></i>
+    			</div>
+    			<div class="card-body">
+    				<h4 class="text-uppercase"><%= @download.title %></h4>
+    				<p>
+    					<b>Descripción: </b><%= @download.description %><br>
+    					<b>Archivo: </b><%= @download.name %><br>
+    					<b>Tamaño: </b><%= @download.size %><br>
+    					<b>Fecha: </b><%= @download.date %><br>
+    				</p>
+    				<a href="<%= @download.file.url %>" class="download" download="<%= @download.name_no_ext %>"><%= image_tag 'icon-download.jpg' %></a>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+  </div>
+</section>

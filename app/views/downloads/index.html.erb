@@ -1,29 +1,39 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Downloads</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @downloads.each do |download| %>
-      <tr>
-        <td><%= download.title %></td>
-        <td><%= download.description %></td>
-        <td><%= link_to 'Show', download %></td>
-        <td><%= link_to 'Edit', edit_download_path(download) %></td>
-        <td><%= link_to 'Destroy', download, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Download', new_download_path %>
+<div class="main-image bg-downloads">
+  <div class="container">
+    <h2>DESCARGAS</h2>
+  </div>
+</div>
+<section>
+  <div class="container">
+    <h6 class="downloads-title">
+      <span><i class="icon mime image icon-sm"></i> IMAGEN</span>
+      <span><i class="icon mime document icon-sm"></i> DOCUMENTO</span>
+      <span><i class="icon mime video icon-sm"></i> VIDEO</span>
+    </h6>
+    <div class="row tight-10 space-NS-40 organize-S-20">
+      <%= render @downloads %>
+    </div>
+  </div>
+</section>
+<div class="modal fade download-modal" aria-hidden="false" id="downloadInfo">
+  <div class="modal-dialog">
+    <div class="card">
+      <div class="card-band">
+        <i class="icon mime"></i>
+      </div>
+      <div class="card-body">
+        <h4 class="text-uppercase title"></h4>
+        <p>
+          <b>Descripción: </b><span class="description"></span><br>
+          <b>Archivo: </b><span class="name"></span><br>
+          <b>Tamaño: </b><span class="size"></span><br>
+          <b>Fecha: </b><span class="date"></span><br>
+        </p>
+        <a href="" class="download" download=""><%= image_tag 'icon-download.jpg' %></a>
+      </div>
+    </div>
+  </div>
+</div>
+<% content_for :extra_js do %>
+  Utils.downloadInfo();
+<% end %>

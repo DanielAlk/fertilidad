@@ -1,5 +1,7 @@
 class DownloadsController < ApplicationController
+  before_action :authenticate_admin!, except: [:index, :show]
   before_action :set_download, only: [:show, :edit, :update, :destroy]
+  layout 'admin', only: [:new, :edit]
 
   # GET /downloads
   # GET /downloads.json
@@ -69,6 +71,6 @@ class DownloadsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def download_params
-      params.require(:download).permit(:title, :description)
+      params.require(:download).permit(:title, :description, :file)
     end
 end

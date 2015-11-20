@@ -21,3 +21,30 @@ Utils.adminButtons = function() {
 		});
 	});
 };
+
+Utils.downloadInfo = function() {
+	var $modal = $('#downloadInfo');
+	var $el = {};
+	$el.type = $modal.find('i.icon.mime');
+	$el.title = $modal.find('.title');
+	$el.description = $modal.find('.description');
+	$el.name = $modal.find('.name');
+	$el.size = $modal.find('.size');
+	$el.date = $modal.find('.date');
+	$el.file = $modal.find('.download');
+	$('.download-info-trigger').click(function(e) {
+		e.preventDefault();
+		var href = $(this).attr('href');
+		$.getJSON(href, function(download) {
+			for (var key in download) {
+				switch(key) {
+					case 'type': $el.type.attr('class', 'icon mime ' + download.type); break;
+					case 'file': $el.file.attr('href', download.file); break;
+					case 'name_no_ext': $el.file.attr('download', download.name_no_ext); break;
+					default: if ($el[key]) $el[key].text(download[key]);
+				};
+			};
+			$modal.modal('show');
+		});
+	});
+};
