@@ -13,3 +13,17 @@
 .slider-indicators a:hover span, .slider-indicators a:focus span, .slider-indicators a:active span, .slider-indicators a.active span { background-color: #FFF; }
 
 .slider-footer { position: absolute; width: 100%; left: 0; bottom: 0; padding-bottom: 30px; }
+
+@media(max-width: 1199px) {
+	.slider-indicators { top: 600px; }
+}
+
+@media(max-width: 767px) {
+	.slide .container { padding-top: 110px; }
+	.slider-indicators { top: 540px; }
+	.slider .icon.fecundation { height: 50px; }
+	.slider .icon.fecundation.first { width: 85px; }
+	.slider-footer .row>div>:first-child { float: left; padding-top: 20px; min-width: 85px; }
+	.slider .icon.fecundation.second { background-position: -78px 0; width: 53px; }
+	.slider .icon.fecundation.third { background-position: -140px 0; width: 60px; }
+}

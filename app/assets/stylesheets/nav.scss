@@ -1,0 +1,37 @@
+header { position: absolute; z-index: 1; width: 100%; border-bottom: 1px solid rgba(255, 255, 255, 0.5); color: #FFF; }
+header .brand { position: absolute; left: 0; }
+header .navigation { position: relative; padding-top: 25px; padding-left: 200px; height: 100px; }
+header .brand img { height: 48px; width: auto; }
+header nav.menu>div>a { display: inline-block; color: inherit; font-size: 14px; font-family: 'Oswald', sans-serif; padding: 0 18px 25px; position: relative; border-bottom: 3px solid transparent; }
+header nav.menu { position: absolute; bottom: -2px; padding-left: 30px; padding-right: 182px; }
+header nav.menu>div>a.active, header nav.menu>div>a:hover, header nav.menu>div>a:focus, header nav.menu>div>a:active { border-bottom-color: #FFF; text-decoration: none; }
+header nav.menu div.social { padding-left: 18px; position: absolute; top: 0; right: 0; }
+header nav.menu div.social>a { margin: 0 10px; }
+header .menu-trigger { position: absolute; font-size: 1.4em; height: 48px; line-height: 48px; }
+
+@media(max-width: 1199px) {
+	header nav.menu div.social { padding: 0; margin: 10px; top: auto; }
+	header nav.menu { padding-left: 15px; padding-right: 0; }
+}
+
+@media(max-width: 991px) {
+	header .navigation { position: static; padding-left: 0; }
+	header .brand { position: static; text-align: center; }
+	header nav.menu { display: none; bottom: auto; top: 100%; left: 0; padding: 0; background-color: rgba(0,0,0,0.8); margin: 1px 0 0; }
+	header nav.menu>div>a { position: static; display: block; padding: 4px 0; border: none; }
+	header nav.menu>div { padding: 10px 30px 10px 15px; }
+	header nav.menu div.social>a { display: inline-block; margin: 0; margin-right: 10px; }
+	header nav.menu div.social { position: static; margin: 10px 0 0; }
+	header nav.menu div.social>a:last-of-type { margin-right: 0; }
+	header nav.menu>div>a.active, header nav.menu>div>a:hover, header nav.menu>div>a:focus, header nav.menu>div>a:active { border: none; font-weight: 400; }
+}
+
+@media(max-width: 767px) {
+	header nav.menu { width: 100%; }
+	header .navigation { height: 70px; padding-top: 10px; }
+	header .menu-trigger { height: 48px; line-height: 48px; }
+}
+
+@media(min-width: 992px) {
+	header nav.menu { display: block !important; }
+}

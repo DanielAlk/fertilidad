@@ -3,10 +3,34 @@ section h2>.btn.pull-right { margin-top: 6px; }
 
 /* TEAM */
 section.team { height: 380px; }
-section.team div.absolute { height: 328px; width: 100%; margin: 40px 0 0; }
+section.team div.absolute { height: 328px; width: 100%; margin: 40px 0 0; left: 0; }
 section.team div.absolute>.relative{ height: 100%; width: 100%; top: 0; padding-top: calc(328px - 75px); background-color: rgba(0,0,0,0.5); background-clip: content-box; }
 section.team h4 { margin: 18px 0 5px; }
 section.team p { font-size: 0.7em; }
+section.team-appendix { padding-top: 150px; }
+
+@media(max-width: 1199px) {
+	section.team div.absolute { height: 273px; margin-top: 90px; }
+	section.team div.absolute>.relative{ padding-top: calc(273px - 75px); }
+}
+
+@media(max-width: 991px) {
+	section.team { height: 300px; }
+	section.team div.absolute { height: 210px; margin-top: 50px; }
+	section.team div.absolute > .relative { padding-top: calc(210px - 50px); }
+	section.team h4 { margin-top: 4px; }
+	section.team p { margin: 0; }
+	section.team-appendix { padding-top: 100px; }
+}
+
+@media(max-width: 767px) {
+	section.team div.absolute { height: 84px; margin-top: 10px; }
+	section.team { height: 160px; }
+	section.team div.absolute > .relative { padding-top: 0; top: 100%; height: auto; }
+	section.team h4 { font-size: 11px; }
+	section.team p { font-size: 8px; margin-bottom: 5px; }
+	section.team-appendix { padding: 100px 10px 20px; }
+}
 
 /* TWEET */
 .tweet { font-size: 0.8em; }
@@ -21,13 +45,26 @@ section.team p { font-size: 0.7em; }
 .main-image.mini { height: 101px; padding-top: 0; }
 .main-image p { max-width: 400px; margin-top: 20px; }
 
+@media(max-width: 767px) {
+	.main-image { height: 350px; padding-top: 110px; }
+}
+
 /* SPERMOGRAM */
 .spermogram-picture { float: left; width: auto; height: 350px; margin-right: 30px; }
+
+@media(max-width: 767px) {
+	.spermogram-picture { height: 190px; }
+}
 
 /* DOWNLOADS */
 .downloads-title { padding-bottom: 15px; }
 .downloads-title i { margin: 0 0 -13px; margin-right: 10px; }
 .downloads-title span { margin-right: 25px; }
+@media(max-width: 767px) {
+	.downloads-title span { margin-right: 5px; }
+	.downloads-title { text-align: center; }
+	.downloads-title i { margin-right: 5px; }
+}
 @media(min-width: 768px) {
 	.download-modal .modal-dialog { padding-top: 90px; }
 }

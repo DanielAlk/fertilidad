@@ -16,6 +16,12 @@ h1 sup, h2 sup, h3 sup, h4 sup, h5 sup, h6 sup,
 a[href^="mailto"], a[href^="tel"] { color: inherit; }
 a.clean, a.clean:active, a.clean:focus, a.clean:hover, a.clean:visited { color: inherit; text-decoration: none; }
 
+@media(max-width: 767px) {
+	body { font-size: 14px; }
+	h2, .h2 { font-size: 35px; }
+	h3, .h3 { font-size: 22px; }
+}
+
 .relative {position: relative;}
 .absolute {position: absolute;}
 
@@ -39,6 +45,10 @@ a.clean, a.clean:active, a.clean:focus, a.clean:hover, a.clean:visited { color: 
 
 .inspace-N-150 { padding-top: 150px; }
 .inspace-S-0 { padding-bottom: 0; }
+
+@media(max-width: 767px) {
+	.space-xs-S-50 { margin-bottom: 50px; }
+}
 
 .organize-S-10>* { margin-bottom: 10px; }
 .organize-S-20>* { margin-bottom: 20px; }

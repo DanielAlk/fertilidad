@@ -2,22 +2,28 @@
 <header>
 	<div class="container">
 		<div class="navigation">
+			<div class="visible-xs visible-sm menu-trigger"><a href="javascript:void(0);" class="clean"><i class="glyphicon glyphicon-align-justify"></i></a></div>
 			<div class="brand"><a href="<%= root_path %>"><%= image_tag 'logo.png' %></a></div>
 			<nav class="menu">
-				<a class="<%= nav_class 'home' %>" href="<%= root_path %>">HOME</a>
-				<a class="<%= nav_class 'institutional' %>" href="<%= institutional_path %>">INSTITUCIONAL</a>
-				<a class="<%= nav_class 'instructional' %>" href="<%= instructional_path %>">INSTRUCTIVOS</a>
-				<a class="<%= nav_class 'spermogram' %>" href="<%= spermogram_path %>">ESPERMOGRAMA</a>
-				<a class="<%= nav_class 'insemination' %>" href="<%= insemination_path %>">INSEMINACIÓN</a>
-				<a class="<%= nav_class 'downloads', :controller %>" href="<%= downloads_path %>">DESCARGAS</a>
-				<a class="<%= nav_class 'contact' %>" href="<%= contact_path %>">CONTACTO</a>
-				<div class="social">
-					<a href="javascript:void(0);"><i class="icon social facebook"></i></a>
-					<a href="javascript:void(0);"><i class="icon social twitter"></i></a>
-					<a href="javascript:void(0);"><i class="icon social google"></i></a>
-					<a href="javascript:void(0);"><i class="icon social instagram"></i></a>
+				<div>
+					<a class="<%= nav_class 'home' %>" href="<%= root_path %>">HOME</a>
+					<a class="<%= nav_class 'institutional' %>" href="<%= institutional_path %>">INSTITUCIONAL</a>
+					<a class="<%= nav_class 'instructional' %>" href="<%= instructional_path %>">INSTRUCTIVOS</a>
+					<a class="<%= nav_class 'spermogram' %>" href="<%= spermogram_path %>">ESPERMOGRAMA</a>
+					<a class="<%= nav_class 'insemination' %>" href="<%= insemination_path %>">INSEMINACIÓN</a>
+					<a class="<%= nav_class 'downloads', :controller %>" href="<%= downloads_path %>">DESCARGAS</a>
+					<a class="<%= nav_class 'contact' %>" href="<%= contact_path %>">CONTACTO</a>
+					<div class="social">
+						<a href="javascript:void(0);"><i class="icon social facebook"></i></a>
+						<a href="javascript:void(0);"><i class="icon social twitter"></i></a>
+						<a href="javascript:void(0);"><i class="icon social google"></i></a>
+						<a href="javascript:void(0);"><i class="icon social instagram"></i></a>
+					</div>
 				</div>
 			</nav>
 		</div>
 	</div>
 </header>
+<% content_for :extra_js do %>
+	Utils.navigation();
+<% end %>

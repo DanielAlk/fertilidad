@@ -48,3 +48,25 @@ Utils.downloadInfo = function() {
 		});
 	});
 };
+
+Utils.navigation = function() {
+	var $nav = $('header nav.menu');
+	var $menu = $nav.children('div');
+	var activate = function() {
+		$nav.addClass('active');
+		$(document).on('click', hide);
+	};
+	var deactivate = function() {
+		$nav.removeClass('active');
+		$(document).off('click', hide);
+	};
+	var show = function() {
+		$nav.show('slide', {direction: 'left'}, activate);
+	};
+	var hide = function() {
+		$nav.hide('slide', {direction: 'left'}, deactivate);
+	};
+	$('.menu-trigger a').click(function(e) {
+		if (!$nav.is('.active')) show();
+	});
+};
