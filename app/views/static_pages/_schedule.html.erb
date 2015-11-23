@@ -8,31 +8,23 @@
 				<% if icons %>
 					<div><i class="icon fecundation first"></i></div>
 				<% end %>
-				<h4 class="space-NS-20">DÍAS Y HORARIOS DE ATENCIÓN SIN TURNO</h4>
-				<p class="small">
-					Martes de 08:00 a 16:00 hs., Miércoles de 10:30 a 19:00 hs.<br>
-					Jueves de 10:30 a 16:00 hs., Viernes de 10:30 a 16:00 hs.
-				</p>
+				<h4 class="space-NS-20"><%= @schedules.first.title.html_safe %></h4>
+				<div class="small"><%= @schedules.first.text.html_safe %></div>
 			</div>
 			<div class="<%= col_class %>">
 				<% if icons %>
 					<div><i class="icon fecundation second"></i></div>
 				<% end %>
-				<h4 class="space-NS-20">OTROS DÍAS/ HORARIOS CON TURNO</h4>
-				<p class="small">
-					Solicitar turno al +54 221 4219364 o al +54 221 15 4857016<br>
-					o via mail <a href="mailto:info@laboratorioyfertilidad.com">info@laboratorioyfertilidad.com</a>
-				</p>
+				<h4 class="space-NS-20"><%= @schedules.second.title.html_safe %></h4>
+				<div class="small"><%= @schedules.second.text.html_safe %></div>
 			</div>
 			<% if practices %>
 				<div class="<%= col_class %>">
 					<% if icons %>
 						<div><i class="icon fecundation third"></i></div>
 					<% end %>
-					<h4 class="space-NS-20">PRÁCTICAS CON TURNO, EXTRACCIONES:</h4>
-					<p class="small">
-						Martes de 08:30 a 10:30 hs.
-					</p>
+					<h4 class="space-NS-20"><%= @schedules.third.title.html_safe %></h4>
+					<div class="small"><%= @schedules.third.text.html_safe %></div>
 				</div>
 			<% end %>
 		</div>

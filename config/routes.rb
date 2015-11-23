@@ -24,6 +24,8 @@ Rails.application.routes.draw do
 
   resources :downloads, path: 'descargas'
   
+  resources :schedules, path: 'horarios'
+  
   get 'institucional' => 'static_pages#institutional', as: :institutional
   get 'instructivos' => 'static_pages#instructional', as: :instructional
   get 'espermograma' => 'static_pages#spermogram', as: :spermogram

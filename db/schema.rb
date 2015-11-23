@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151120062343) do
+ActiveRecord::Schema.define(version: 20151123093042) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "",        null: false
@@ -78,6 +78,13 @@ ActiveRecord::Schema.define(version: 20151120062343) do
   end
 
   add_index "image_gallery_items", ["image_gallery_id"], name: "index_image_gallery_items_on_image_gallery_id", using: :btree
+
+  create_table "schedules", force: :cascade do |t|
+    t.string   "title",      limit: 255
+    t.text     "text",       limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
 
   add_foreign_key "image_gallery_items", "image_galleries"
 end

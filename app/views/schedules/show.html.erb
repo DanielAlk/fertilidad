@@ -1,0 +1,12 @@
+<p>
+  <strong>Titulo:</strong>
+  <%= @schedule.title %>
+</p>
+
+<p>
+  <strong>Texto:</strong>
+  <%= @schedule.text %>
+</p>
+
+<%= link_to 'Edit', edit_schedule_path(@schedule) %> |
+<%= link_to 'Back', schedules_path %>
