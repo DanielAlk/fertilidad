@@ -8,9 +8,6 @@ class StaticPagesController < ApplicationController
   def institutional
   end
   
-  def instructional
-  end
-  
   def spermogram
   end
   
@@ -19,11 +16,5 @@ class StaticPagesController < ApplicationController
   
   def contact
   end
-
-  private
-
-    def get_schedules
-      @schedules = Schedule.all
-    end
 
 end

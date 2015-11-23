@@ -1,0 +1,7 @@
+<%= tinymce %>
+<% content_for :extra_js do %>
+if (window.location.hash != '#tinymce') {
+  window.location.hash = 'tinymce';
+  window.location.reload();
+};
+<% end %>

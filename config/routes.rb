@@ -21,18 +21,14 @@ Rails.application.routes.draw do
     get 'preview_items', path: 'preview', as: :preview
     put 'update_items', path: 'items', as: :items
   end
-
   resources :downloads, path: 'descargas'
-  
+  resources :instructionals, path: 'instructivos'
   resources :schedules, path: 'horarios'
   
   get 'institucional' => 'static_pages#institutional', as: :institutional
-  get 'instructivos' => 'static_pages#instructional', as: :instructional
   get 'espermograma' => 'static_pages#spermogram', as: :spermogram
   get 'inseminacion' => 'static_pages#insemination', as: :insemination
   get 'contacto' => 'static_pages#contact', as: :contact
-  # get 'images' => 'static_pages#images', as: :static_images
-  # get 'downloads' => 'static_pages#downloads', as: :static_downloads
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

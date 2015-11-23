@@ -1,0 +1,15 @@
+<section class="instructional">
+	<div class="container">
+		<% if admin_signed_in? %>
+			<% if params['action'] == 'show' %>
+				<%= link_to 'Ver todos', instructionals_path, class: 'pull-right' %>
+			<% else %>
+				<%= link_to 'Ver separado', instructional, class: 'pull-right' %>
+			<% end %>
+			<%= link_to 'Editar', edit_instructional_path(instructional), class: 'pull-right space-E-15' %>
+		<% end %>
+		<h3 class="text-uppercase"><%= instructional.title %></h3>
+		<h5 class="text-uppercase"><%= instructional.subtitle %></h5>
+		<div class="space-N-40"><%= instructional.text.html_safe %></div>
+	</div>
+</section>
