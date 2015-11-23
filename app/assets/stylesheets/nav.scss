@@ -18,7 +18,7 @@ header .menu-trigger { position: absolute; font-size: 1.4em; height: 48px; line-
 	header .navigation { position: static; padding-left: 0; }
 	header .brand { position: static; text-align: center; }
 	header nav.menu { display: none; bottom: auto; top: 100%; left: 0; padding: 0; background-color: rgba(0,0,0,0.8); margin: 1px 0 0; }
-	header nav.menu>div>a { position: static; display: block; padding: 4px 0; border: none; }
+	header nav.menu>div>a { position: static; display: block; padding: 4px 0; border: none; max-width: 130px; }
 	header nav.menu>div { padding: 10px 30px 10px 15px; }
 	header nav.menu div.social>a { display: inline-block; margin: 0; margin-right: 10px; }
 	header nav.menu div.social { position: static; margin: 10px 0 0; }
@@ -30,6 +30,10 @@ header .menu-trigger { position: absolute; font-size: 1.4em; height: 48px; line-
 	header nav.menu { width: 100%; }
 	header .navigation { height: 70px; padding-top: 10px; }
 	header .menu-trigger { height: 48px; line-height: 48px; }
+}
+
+@media(min-width: 768px) {
+	header nav.menu { height: auto !important; }
 }
 
 @media(min-width: 992px) {

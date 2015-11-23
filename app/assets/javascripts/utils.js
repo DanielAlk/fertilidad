@@ -50,6 +50,8 @@ Utils.downloadInfo = function() {
 };
 
 Utils.navigation = function() {
+	var $body = $('body');
+	var $header = $('header');
 	var $nav = $('header nav.menu');
 	var $menu = $nav.children('div');
 	var activate = function() {
@@ -61,7 +63,8 @@ Utils.navigation = function() {
 		$(document).off('click', hide);
 	};
 	var show = function() {
-		$nav.show('slide', {direction: 'left'}, activate);
+		var height = window.matchMedia('(max-width:767px)').matches ? $body.height() - $header.height() : 'auto';
+		$nav.css('height', height).show('slide', {direction: 'left'}, activate);
 	};
 	var hide = function() {
 		$nav.hide('slide', {direction: 'left'}, deactivate);
