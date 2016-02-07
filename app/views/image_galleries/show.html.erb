@@ -47,3 +47,4 @@
 <% unless admin_signed_in? and @show_as_regular_user.blank? %>
 	<%= render 'gallery', items: @image_gallery.items unless browser.mobile? %>
 <% end %>
+<%= render 'schedules/schedule', schedule_class: 'schedule', icons: false %>

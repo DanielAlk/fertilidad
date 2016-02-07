@@ -1,5 +1,5 @@
 class StaticPagesController < ApplicationController
-  before_action :get_schedules, except: [:institutional, :contact]
+  before_action :get_schedules, except: [:contact]
   
   def home
     @image_galleries = ImageGallery.take(8)
@@ -8,10 +8,13 @@ class StaticPagesController < ApplicationController
   def institutional
   end
   
-  def spermogram
+  def information
   end
   
-  def insemination
+  def services
+  end
+  
+  def news
   end
   
   def contact

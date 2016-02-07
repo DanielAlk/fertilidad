@@ -1,0 +1,29 @@
+<div class="main-image bg-insemination">
+	<div class="container">
+		<h2>NOTICIAS</h2>
+	</div>
+</div>
+<section>
+	<div class="container">
+		<h3 class="text-uppercase">noticias</h3>
+		<p class="space-N-30 space-S-60">
+			Próximamente estaremos renovando ésta web y nuestro logo; por ésta razón probablemente no esté disponible por momentos o haya algún cambio (ej en lugar de .com puede ser .com.ar)
+		</p>
+	</div>
+</section>
+<section class="bg-grey news-images">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-6 col-sm-4">
+				<%= image_tag 'news-1.jpg' %>
+			</div>
+			<div class="hidden-xs col-sm-4">
+				<%= image_tag 'news-2.jpg' %>
+			</div>
+			<div class="col-xs-6 col-sm-4">
+				<%= image_tag 'news-3.jpg' %>
+			</div>
+		</div>
+	</div>
+</section>
+<%= render 'schedules/schedule', schedule_class: 'schedule', icons: false %>

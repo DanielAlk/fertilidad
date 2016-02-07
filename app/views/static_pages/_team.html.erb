@@ -32,7 +32,8 @@
 		</small>
 	</p>
 </section-->
-<section class="equipo">
+<% team_class = '' unless local_assigns.has_key? :team_class %>
+<section class="equipo <%= team_class %>">
 	<div class="container">
 		<h2 class="text-uppercase">Equipo</h2>
 		<h4>Roxana Napolitano <sup>*</sup></h4>

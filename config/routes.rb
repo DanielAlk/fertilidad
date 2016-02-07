@@ -26,8 +26,9 @@ Rails.application.routes.draw do
   resources :schedules, path: 'horarios'
   
   get 'institucional' => 'static_pages#institutional', as: :institutional
-  get 'espermograma' => 'static_pages#spermogram', as: :spermogram
-  get 'inseminacion' => 'static_pages#insemination', as: :insemination
+  get 'informacion' => 'static_pages#information', as: :information
+  get 'servicios' => 'static_pages#services', as: :services
+  get 'noticias' => 'static_pages#news', as: :news
   get 'contacto' => 'static_pages#contact', as: :contact
 
   # Example of regular route:

@@ -105,6 +105,7 @@ img.cover { width: 100%; height: auto; }
 .bg-images { background-image: url(<%= asset_path 'main-images.jpg' %>); background-size: cover; background-position: center center; color: #FFF; }
 .bg-instructional { background-image: url(<%= asset_path 'main-instructional.jpg' %>); background-size: cover; background-position: center center; color: #FFF; }
 .bg-spermogram { background-image: url(<%= asset_path 'main-spermogram.jpg' %>); background-size: cover; background-position: center center; color: #FFF; }
+.bg-services { background-image: url(<%= asset_path 'main-services.jpg' %>); background-size: cover; background-position: center center; color: #FFF; }
 .bg-insemination { background-image: url(<%= asset_path 'main-insemination.jpg' %>); background-size: cover; background-position: center center; color: #FFF; }
 .bg-contact { background-image: url(<%= asset_path 'main-contact.jpg' %>); background-size: cover; background-position: center center; color: #FFF; }
 .bg-downloads { background-image: url(<%= asset_path 'main-downloads.jpg' %>); background-size: cover; background-position: center center; color: #FFF; }
@@ -136,4 +137,20 @@ img.cover { width: 100%; height: auto; }
 }
 @media(min-width: 768px) and (max-width: 991px) {
 	.sponsors .row > div:nth-child(2) { padding-top: 80px; margin: 0 60px 0 -60px; }
+}
+
+/* INFO PARA PACIENTES */
+.insemination-preparation img { max-height: 200px; width: auto; margin: 20px 0; }
+.insemination-preparation { padding-top: 25px; }
+
+/* SERVICES */
+.services-images img { height: 200px; width: auto; }
+
+/* NEWS */
+.news-images img { height: 200px; width: auto; }
+.news-images .row>div:nth-child(1) { text-align: left; }
+.news-images .row>div:nth-child(2) { text-align: center; }
+.news-images .row>div:nth-child(3) { text-align: right; }
+@media(max-width: 767px) {
+	.news-images img { height: auto; width: 100%; }
 }
