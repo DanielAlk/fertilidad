@@ -1,18 +1,18 @@
-.slider { position: relative; height: 1000px; color: #FFF; }
+.slider { position: relative; height: 800px; color: #FFF; }
 .slide-container { position: absolute; top: 0; left: 0; width: 100%; }
 .slide:not(.active) { display: none; }
-.slide { position: relative; height: 1000px; background-size: cover; background-position: center center; }
+.slide { position: relative; height: 800px; background-size: cover; background-position: center center; }
 .bg-slide1 { background-image: url(<%= asset_path 'slide1.jpg' %>); }
 .bg-slide2 { background-image: url(<%= asset_path 'slide2.jpg' %>); }
 .bg-slide3 { background-image: url(<%= asset_path 'slide3.jpg' %>); }
-.slide .container { padding-top: 250px; }
+.slide .container { padding-top: 200px; }
 .slide .container p { max-width: 600px; margin: 35px 0; }
 
 .slider-indicators { position: absolute; top: 700px; width: 100%; text-align: center; }
 .slider-indicators span { display: inline-block; width: 34px; height: 5px; background-color: rgba(255,255,255,0.5); }
 .slider-indicators a:hover span, .slider-indicators a:focus span, .slider-indicators a:active span, .slider-indicators a.active span { background-color: #FFF; }
 
-.slider-footer { position: absolute; width: 100%; left: 0; bottom: 0; padding-bottom: 30px; }
+.slider-footer { position: absolute; width: 100%; left: 0; bottom: 0; padding-bottom: 40px; }
 
 @media(max-width: 1199px) {
 	.slider-indicators { top: 600px; }
@@ -31,4 +31,21 @@
 	@media(min-width: 510px) { 
 		.slider-footer .row>div>:first-child { margin-left: -85px; }
 	}
+}
+
+.logo-diversidad * { width: 100%; height: auto; }
+.logo-diversidad h2 { font-size: 24.4px; }
+.logo-diversidad h4 { font-size: 18.7px; }
+.logo-diversidad { width: 250px; text-align: justify; white-space: nowrap; }
+.slide .container p { font-size: 1.2em; max-width: 500px !important; }
+@media(max-width: 1199px) {
+	.logo-diversidad { width: 200px; }
+	.logo-diversidad h2 {font-size: 19.6px;}
+	.logo-diversidad h4 { font-size: 15.0px; }
+	.slide .container p { font-size: 1em; max-width: 500px !important; }
+}
+@media(max-width: 767px) {
+	.logo-diversidad { text-align: center; width: auto; margin-top: 30px; }
+	.logo-diversidad img { width: 200px }
+	.slide .container p { text-align: center;max-width: none !important;}
 }

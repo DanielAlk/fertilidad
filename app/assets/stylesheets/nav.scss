@@ -2,16 +2,18 @@ header { position: absolute; z-index: 1; width: 100%; border-bottom: 1px solid r
 header .brand { position: absolute; left: 0; }
 header .navigation { position: relative; padding-top: 25px; padding-left: 200px; height: 100px; }
 header .brand img { height: 48px; width: auto; }
-header nav.menu>div>a { display: inline-block; color: inherit; font-size: 14px; font-family: 'Oswald', sans-serif; padding: 0 18px 25px; position: relative; border-bottom: 3px solid transparent; }
-header nav.menu { position: absolute; bottom: -2px; padding-left: 30px; padding-right: 182px; }
+header nav.menu>div>a { display: inline-block; color: inherit; font-size: 14px; font-family: 'Oswald', sans-serif; padding: 0 16px 25px; position: relative; border-bottom: 3px solid transparent; }
+header nav.menu { position: absolute; bottom: -2px; padding-left: 15px; padding-right: 0px; }
 header nav.menu>div>a.active, header nav.menu>div>a:hover, header nav.menu>div>a:focus, header nav.menu>div>a:active { border-bottom-color: #FFF; text-decoration: none; }
-header nav.menu div.social { padding-left: 18px; position: absolute; top: 0; right: 0; }
+header nav.menu div.social { position: absolute; top: auto; right: 0; margin: 10px; }
 header nav.menu div.social>a { margin: 0 10px; }
 header .menu-trigger { position: absolute; font-size: 1.4em; height: 48px; line-height: 48px; }
 
-@media(max-width: 1199px) {
-	header nav.menu div.social { padding: 0; margin: 10px; top: auto; }
-	header nav.menu { padding-left: 15px; padding-right: 0; }
+@media(min-width: 992px) and (max-width: 1199px) {
+	header nav.menu { top: calc(100% - 1px); bottom: auto; left: 0; width: 100%; text-align: center; padding: 0; }
+	header nav.menu > div > a { padding: 25px 16px 0; }
+	header nav.menu div.social { top: auto; bottom: 100%; }
+	header nav.menu > div > a.active, header nav.menu > div > a:hover, header nav.menu > div > a:focus, header nav.menu > div > a:active { border-bottom: none; border-top: 3px solid #FFF; }
 }
 
 @media(max-width: 991px) {

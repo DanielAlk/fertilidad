@@ -14,26 +14,41 @@
 	</div>
 </section>
 <section class="bg-couple-coffee">
-	<div class="container">
-		<h2>PRÁCTICAS</h2>
-		<h3>SIN TURNO</h3>
-		<ul>
-			<li>Espermograma + morfología con criterio de Kruger + swim up diagnóstico</li>
-			<li>Espermocultivo</li>
-			<li>Mar Test</li>
-			<li>Recuperación de espermatozoides desde orina (eyaculación retrógrada)</li>
-			<li>Lavado y selección de espermatozoides (swim up para inseminaciones intrauterinas)</li>
-			<li>Ensayo de TUNEL y CASPASA 3 ACTIVA* (El informe estará disponible pasados 20 días de entrega de la muestra)</li>
-			<li>Criopreservación de muestras de semen (tratamientos de fertilidad/eyaculación retrógrada/tratamientos oncológicos)</li>
-			<li>Biopsia testicular</li>
-		</ul>
-		<h3>CON TURNO</h3>
-		<ul>
-			<li>Cariotipos (el informe estará disponible 35 días después de la extracción)</li>
-		</ul>
+	<div class="container home-practices">
+		<div class="row">
+			<div class="col-sm-6">
+				<h2>PRÁCTICAS</h2>
+				<h3 class="text-uppercase">A) Prácticas que no requieren turno</h3>
+				<ul>
+					<li>Espermograma + morfología con criterio de Kruger + swim up diagnóstico</li>
+					<li>Espermocultivo</li>
+					<li>Mar Test</li>
+					<li>Recuperación de espermatozoides desde orina (eyaculación retrógrada)</li>
+					<li>Lavado y selección de espermatozoides (swim up para inseminaciones intrauterinas)</li>
+					<li>Ensayo de TUNEL y CASPASA 3 ACTIVA*</li>
+					<li>Criopreservación de muestras de semen (tratamientos de fertilidad/eyaculación  retrógrada/tratamientos oncológicos)</li>
+					<li>Biopsia testicular</li>
+				</ul>
+				<br>
+				<div><small>* El informe estará disponible 30 - 35 días posteriores a la entrega de la muestra.</small></div>
+			</div>
+			<div class="col-sm-6">
+				<h2>&nbsp;</h2>
+				<h3 class="text-uppercase">b) Prácticas con turno: extracciones, martes de 8.30 a 10.30hs.</h3>
+				<ul>
+					<li>Cariotipos**</li>
+					<li>Estudios de Paternidad pre y postnatales (SouthGenetics)***</li>
+					<li>Estudios genéticos prenatales no invasivos (NIPTs-SouthGenetics)***</li>
+				</ul>
+				<br>
+				<div><small>** el informe estará disponible 35 días después de la extracción.</small></div>
+				<br>
+				<div><small>*** informe disponible en 10-12 días</small></div>
+			</div>
+		</div>
 	</div>
 </section>
-<section>
+<!--section>
 	<div class="container">
 		<h2>ÚLTIMOS TWEETS</h2>
 		<div class="row space-NS-40">
@@ -67,9 +82,21 @@
 			</div>
 		</div>
 	</div>
-</section>
+</section-->
 <%= render 'team' %>
-<section class="bg-ash inspace-S-0">
+<section class="bg-mother-and-child">
+	<div class="sponsors">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-4"><%= image_tag 'logo-crb.png' %></div>
+				<div class="col-sm-4"><%= image_tag 'logo-samer.png' %></div>
+				<div class="col-sm-4"><%= image_tag 'logo-abb.png' %></div>
+			</div>
+		</div>
+	</div>
+</section>
+<%= render 'schedules/schedule', schedule_class: 'schedule', icons: false %>
+<!--section class="bg-ash inspace-S-0">
 	<div class="bg-downloads-mini">
 		<div class="container">
 			<h4>APRENDE MAS SOBRE DISTINTOS CASOS:</h4>
@@ -77,4 +104,4 @@
 			<p class="space-S-40 max-x-800"><small>Queremos compartir con vos nuestras experiencias, las que hemos desarrollado y vivido durante años, para que observes las distintas posibilidades que surgen en los casos de fertilidad.</small></p>
 		</div>
 	</div>
-</section>
+</section-->

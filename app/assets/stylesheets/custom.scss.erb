@@ -109,3 +109,31 @@ img.cover { width: 100%; height: auto; }
 .bg-contact { background-image: url(<%= asset_path 'main-contact.jpg' %>); background-size: cover; background-position: center center; color: #FFF; }
 .bg-downloads { background-image: url(<%= asset_path 'main-downloads.jpg' %>); background-size: cover; background-position: center center; color: #FFF; }
 .bg-downloads-mini { background-image: url(<%= asset_path 'bg-downloads-mini.jpg' %>); background-size: cover; background-position: center center; color: #FFF; }
+
+
+/* HOME PRACTICES */
+@media(max-width: 767px) {
+	.home-practices .row>div:nth-child(1) h2 { margin-bottom: 40px; }
+	.home-practices .row>div:nth-child(2) h2 { margin: -10px; }
+	.home-practices { padding-bottom: 10px; }
+}
+
+/* EQUIPO */
+.equipo h4 { margin-top: 30px; margin-bottom: 1px; }
+.equipo p { font-size: 0.8em; }
+.equipo small { margin-top: 50px; display: inline-block; margin-bottom: 30px; }
+
+/* SPONSORS */
+.sponsors { padding-top: 30px; padding-bottom: 30px; text-align: center;}
+.sponsors img { height: 55px; width: auto;}
+@media(max-width: 767px) {
+	.sponsors .row>div:not(:last-child) img { margin-bottom: 40px; max-width: 100%; height: auto; max-height: 50px; }
+}
+@media(min-width: 768px) {
+	.sponsors .row>div:nth-child(1) { text-align: left;};
+	.sponsors .row>div:nth-child(2) { text-align: center;};
+	.sponsors .row>div:nth-child(3) { text-align: right;};
+}
+@media(min-width: 768px) and (max-width: 991px) {
+	.sponsors .row > div:nth-child(2) { padding-top: 80px; margin: 0 60px 0 -60px; }
+}
