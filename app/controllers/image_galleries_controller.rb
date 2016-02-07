@@ -2,7 +2,7 @@ class ImageGalleriesController < ApplicationController
   before_action :authenticate_admin!, except: [:index, :show, :show_item]
   before_action :set_image_gallery, only: [:show, :edit, :update, :destroy, :update_items, :preview_items]
   before_action :set_image_gallery_item, only: [:show_item, :destroy_item]
-  before_action :get_schedules, only: [:index, :show]
+  before_action :get_schedules, only: [:index, :show, :preview_items]
   layout 'admin', only: [:new, :edit]
 
   # GET /image_galleries
