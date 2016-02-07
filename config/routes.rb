@@ -24,12 +24,13 @@ Rails.application.routes.draw do
   resources :downloads, path: 'descargas'
   resources :instructionals, path: 'instructivos'
   resources :schedules, path: 'horarios'
+  resources :contacts, path: 'contactos'
   
   get 'institucional' => 'static_pages#institutional', as: :institutional
   get 'informacion' => 'static_pages#information', as: :information
   get 'servicios' => 'static_pages#services', as: :services
   get 'noticias' => 'static_pages#news', as: :news
-  get 'contacto' => 'static_pages#contact', as: :contact
+  get 'contacto' => 'static_pages#contact', as: :contact_page
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

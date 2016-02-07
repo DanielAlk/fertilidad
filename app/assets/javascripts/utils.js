@@ -73,3 +73,35 @@ Utils.navigation = function() {
 		if (!$nav.is('.active')) show();
 	});
 };
+
+Utils.startMap = function(elementId) {
+	var location = "Diagonal 73 & Calle 46, La Plata, Buenos Aires, Argentina";
+	var map_canvas = document.getElementById(elementId);
+	var geocoder = new google.maps.Geocoder();
+	var map = new google.maps.Map(map_canvas, {
+		disableDoubleClickZoom: true,
+		scrollwheel: false,
+		zoom: 15,
+		disableDefaultUI: false,
+		mapTypeId: google.maps.MapTypeId.ROADMAP,
+	});
+	geocoder.geocode({ 'address' : location }, function(results, status) {
+		if (status == google.maps.GeocoderStatus.OK) {
+			var marker = new google.maps.Marker({
+				map: map,
+				position: results[0].geometry.location,
+				animation: google.maps.Animation.DROP,
+			});
+			map.setCenter(results[0].geometry.location);
+		};
+	});
+	return map;
+};
+
+Utils.notice = function() {
+	var $modal = $('#modalNotice');
+	$modal.modal('show')
+	.on('shown.bs.modal', function() {
+		$modal.find('.modal-footer>button').focus();
+	});
+};

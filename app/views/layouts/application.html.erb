@@ -8,18 +8,12 @@
 <%= render 'layouts/nav' %>
 <%= yield %>
 <%= render 'layouts/footer' %>
+<%= render 'layouts/notice' %>
 <script>
   $(function() {
-    <% if content_for? :extra_js %>
-      <%= yield :extra_js %>
-    <% end %>
-    <% if notice.present? %>
-      alert('<%= notice %>');
-    <% end %>
-    <% if alert.present? %>
-      alert('<%= alert %>');
-    <% end %>
+    <%= yield :extra_js if content_for? :extra_js %>
   });
 </script>
+<%= yield :extra_scripts if content_for? :extra_scripts %>
 </body>
 </html>
