@@ -14,6 +14,7 @@
 			<%= link_to 'Descarga', new_download_path %>
 			<%= link_to 'Instructivo', new_instructional_path %>
 			<%= link_to 'Miembro del equipo', new_team_member_path %>
+			<%= link_to 'Prácticas', new_practice_type_path %>
 		</div>
 		<div>
 			<div>Ver</div>
@@ -49,6 +50,14 @@
 				<%= link_to @team_member.name, @team_member, class: 'show' %>
 				<%= link_to 'Edit', edit_team_member_path(@team_member), class: 'edit' %>
 				<%= link_to 'Destroy', @team_member, method: :delete, data: { confirm: 'Are you sure?' }, class: 'destroy' %>
+			</div>
+		<% end %>
+		<% if @practice_type.present? && @practice_type.title.present? && @practice.blank? %>
+			<div>
+				<div>Práctica</div>
+				<%= link_to @practice_type.title, @practice_type, class: 'show' %>
+				<%= link_to 'Edit', edit_practice_type_path(@practice_type), class: 'edit' %>
+				<%= link_to 'Destroy', @practice_type, method: :delete, data: { confirm: 'Are you sure?' }, class: 'destroy' %>
 			</div>
 		<% end %>
 	</div>

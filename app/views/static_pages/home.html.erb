@@ -16,35 +16,37 @@
 <section class="bg-couple-coffee">
 	<div class="container home-practices">
 		<div class="row">
-			<div class="col-sm-6">
-				<h2>PRÁCTICAS</h2>
-				<h3 class="text-uppercase">A) Prácticas que no requieren turno</h3>
-				<ul>
-					<li>Espermograma + morfología con criterio de Kruger + swim up diagnóstico</li>
-					<li>Espermocultivo</li>
-					<li>Mar Test</li>
-					<li>Recuperación de espermatozoides desde orina (eyaculación retrógrada)</li>
-					<li>Lavado y selección de espermatozoides (swim up para inseminaciones intrauterinas)</li>
-					<li>Ensayo de TUNEL y CASPASA 3 ACTIVA*</li>
-					<li>Criopreservación de muestras de semen (tratamientos de fertilidad/eyaculación  retrógrada/tratamientos oncológicos)</li>
-					<li>Biopsia testicular</li>
-				</ul>
-				<br>
-				<div><small>* El informe estará disponible 30 - 35 días posteriores a la entrega de la muestra.</small></div>
-			</div>
-			<div class="col-sm-6">
-				<h2>&nbsp;</h2>
-				<h3 class="text-uppercase">b) Prácticas con turno: extracciones, martes de 8.30 a 10.30hs.</h3>
-				<ul>
-					<li>Cariotipos**</li>
-					<li>Estudios de Paternidad pre y postnatales (SouthGenetics)***</li>
-					<li>Estudios genéticos prenatales no invasivos (NIPTs-SouthGenetics)***</li>
-				</ul>
-				<br>
-				<div><small>** el informe estará disponible 35 días después de la extracción.</small></div>
-				<br>
-				<div><small>*** informe disponible en 10-12 días</small></div>
-			</div>
+			<% letters = ('a'...'z').to_a %>
+			<% PracticeType.all.each_with_index do |practice_type, index| %>
+				<div class="col-sm-6">
+					<% if index == 0 %>
+						<h2>PRÁCTICAS</h2>
+					<% else %>
+						<h2>&nbsp;</h2>
+					<% end %>
+					<h3 class="text-uppercase"><%= letters[index] + ') ' + practice_type.title %></h3>
+					<ul>
+						<% info_count = 0 %>
+						<% info_collection = [] %>
+						<% practice_type.practices.each do |practice| %>
+							<li>
+								<%= practice.title %>
+								<% if practice.info.present? %>
+									<% if info_collection.include? practice.info %>
+										<sup><%= info_collection.index(practice.info) +1 %></sup>
+									<% else %>
+										<sup><%= info_count+=1 %></sup>
+										<% info_collection << practice.info %>
+									<% end %>
+								<% end %>
+							</li>
+						<% end %>
+					</ul>
+					<% info_collection.each_with_index do |info, info_index| %>
+						<br><div><small><sup><%= info_index + 1 %></sup> <%= info %></small></div>
+					<% end %>
+				</div>
+			<% end %>
 		</div>
 	</div>
 </section>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160224025841) do
+ActiveRecord::Schema.define(version: 20160224035930) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "",        null: false
@@ -95,6 +95,22 @@ ActiveRecord::Schema.define(version: 20160224025841) do
     t.datetime "updated_at",               null: false
   end
 
+  create_table "practice_types", force: :cascade do |t|
+    t.string   "title",      limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "practices", force: :cascade do |t|
+    t.string   "title",            limit: 255
+    t.string   "info",             limit: 255
+    t.integer  "practice_type_id", limit: 4
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
+
+  add_index "practices", ["practice_type_id"], name: "index_practices_on_practice_type_id", using: :btree
+
   create_table "schedules", force: :cascade do |t|
     t.string   "title",      limit: 255
     t.text     "text",       limit: 65535
@@ -111,4 +127,5 @@ ActiveRecord::Schema.define(version: 20160224025841) do
   end
 
   add_foreign_key "image_gallery_items", "image_galleries"
+  add_foreign_key "practices", "practice_types"
 end

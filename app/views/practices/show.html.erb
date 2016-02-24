@@ -1,0 +1,17 @@
+<p>
+  <strong>Title:</strong>
+  <%= @practice.title %>
+</p>
+
+<p>
+  <strong>Info:</strong>
+  <%= @practice.info %>
+</p>
+
+<p>
+  <strong>Practice type:</strong>
+  <%= @practice.practice_type %>
+</p>
+
+<%= link_to 'Edit', edit_practice_path(@practice) %> |
+<%= link_to 'Back', @practice.practice_type %>

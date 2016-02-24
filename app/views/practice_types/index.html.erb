@@ -1,0 +1,25 @@
+<h1>Prácticas</h1>
+<h4>Categorías</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @practice_types.each do |practice_type| %>
+      <tr>
+        <td><%= link_to practice_type.title, practice_type %></td>
+        <td><%= link_to 'Edit', edit_practice_type_path(practice_type) %></td>
+        <td><%= link_to 'Destroy', practice_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nueva Categoría', new_practice_type_path %>
