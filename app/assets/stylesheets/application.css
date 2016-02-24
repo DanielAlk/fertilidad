@@ -17,6 +17,7 @@
  *= require footer
  *= require buttons
  *= require section
+ *= require articles
  *= require slider
  *= require image_galleries
  *= require card

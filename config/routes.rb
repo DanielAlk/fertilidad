@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-    # The priority is based upon order of creation: first created -> highest priority.
+  # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   resources :instructionals, path: 'instructivos'
   resources :schedules, path: 'horarios'
   resources :contacts, path: 'contactos'
+  resources :articles
   resources :team_members
   resources :practice_types do
     resources :practices, shallow: true
@@ -34,6 +35,7 @@ Rails.application.routes.draw do
   get 'informacion' => 'static_pages#information', as: :information
   get 'servicios' => 'static_pages#services', as: :services
   get 'noticias' => 'static_pages#news', as: :news
+  post 'noticias/:page' => 'static_pages#news_page', as: :news_page
   get 'contacto' => 'static_pages#contact', as: :contact_page
 
   # Example of regular route:

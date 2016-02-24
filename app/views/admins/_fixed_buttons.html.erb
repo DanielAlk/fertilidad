@@ -15,6 +15,7 @@
 			<%= link_to 'Instructivo', new_instructional_path %>
 			<%= link_to 'Miembro del equipo', new_team_member_path %>
 			<%= link_to 'Prácticas', new_practice_type_path %>
+			<%= link_to 'Notica', new_article_path %>
 		</div>
 		<div>
 			<div>Ver</div>
@@ -50,6 +51,14 @@
 				<%= link_to @team_member.name, @team_member, class: 'show' %>
 				<%= link_to 'Edit', edit_team_member_path(@team_member), class: 'edit' %>
 				<%= link_to 'Destroy', @team_member, method: :delete, data: { confirm: 'Are you sure?' }, class: 'destroy' %>
+			</div>
+		<% end %>
+		<% if @article.present? && @article.title.present? %>
+			<div>
+				<div>Noticia</div>
+				<%= link_to @article.title, @article, class: 'show' %>
+				<%= link_to 'Edit', edit_article_path(@article), class: 'edit' %>
+				<%= link_to 'Destroy', @article, method: :delete, data: { confirm: 'Are you sure?' }, class: 'destroy' %>
 			</div>
 		<% end %>
 		<% if @practice_type.present? && @practice_type.title.present? && @practice.blank? %>

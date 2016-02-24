@@ -5,10 +5,20 @@
 </div>
 <section>
 	<div class="container">
-		<h3 class="text-uppercase">noticias</h3>
-		<p class="space-N-30 space-S-60">
-			Próximamente estaremos renovando ésta web y nuestro logo; por ésta razón probablemente no esté disponible por momentos o haya algún cambio<br>(ej en lugar de .com puede ser .com.ar)
-		</p>
+		<% if admin_signed_in? %>
+			<%= link_to 'Crear una nota >>', new_article_path %>
+		<% end %>
+		<% if @articles.blank? %>
+			<h1>Noticias</h1>
+			<p>No hay noticias en este momento.</p>
+		<% else %>
+			<%= render @articles %>
+		<% end %>
+		<% if @article_pages > 1 %>
+			<div class="text-center" style="margin-top:40px;" >
+				<%= link_to 'Cargar más noticias', news_page_path(1), class: 'btn btn-primary', id: 'nextPage' %>
+			</div>
+		<% end %>
 	</div>
 </section>
 <section class="bg-grey news-images">
@@ -27,3 +37,25 @@
 	</div>
 </section>
 <%= render 'schedules/schedule', schedule_class: 'schedule', icons: false %>
+
+<script type="text/javascript">
+	$(function() {
+		var total_pages = <%= @article_pages %>
+		var next_page = 1;
+		$('#nextPage').click(function(e) {
+			e.preventDefault();
+			var $this = $(this);
+			var $div = $this.parent();
+			if (total_pages > next_page) {
+				var url = $this.attr('href');
+				$.post(url, function(html) {
+					next_page++;
+					var $html = $(html);
+					if (next_page < total_pages) $this.attr('href', url.replace(next_page-1, next_page));
+					else $div.hide();
+					$html.hide().insertBefore($div).fadeIn();
+				});
+			} else $div.hide();
+		});
+	});
+</script>	
