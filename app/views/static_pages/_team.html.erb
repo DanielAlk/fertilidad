@@ -1,51 +1,26 @@
-<!--section class="relative bg-mother-and-child team">
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-10 col-xs-offset-1">
-				<h2>EQUIPO</h2>
-				<div class="absolute bg-team">
-					<div class="relative text-center row-for-3">
-						<div class="col">
-							<h4>Roxana Napolitano <sup>1</sup></h4>
-							<p>Directora Técnica</p>
-						</div>
-						<div class="col">
-							<h4>Walter Bozzo</h4>
-							<p>Genética y Citogenética</p>
-						</div>
-						<div class="col">
-							<h4>Lorena Ruiz</h4>
-							<p>Técnica de Laboratorio</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<section class="team-appendix">
-	<p class="text-center">
-		<small>
-			<sup>1</sup> Bióloga; UNLP; MP BZ-128 &nbsp; Dra. en Cs. Naturales; UNLP &nbsp; Bacterióloga Clínica e Industrial; UNLP; MP 7243<br>
-			Especialista en Embriología Clínica; Sociedad Argentina de Medicina Reproductiva (SAMeR)<br>
-			Embryology Laboratory Director (ELD); American Board of Bioanalysis (ABB); USA
-		</small>
-	</p>
-</section-->
 <% team_class = '' unless local_assigns.has_key? :team_class %>
 <section class="equipo <%= team_class %>">
 	<div class="container">
 		<h2 class="text-uppercase">Equipo</h2>
-		<h4>Roxana Napolitano <sup>*</sup></h4>
-		<p>Directora Técnica</p>
-		<h4>Walter Bozzo</h4>
-		<p>Genética y Citogenética</p>
-		<h4>Lorena Ruiz</h4>
-		<p>Técnica de Laboratorio</p>
-		<small>
-			<sup>*</sup> Bióloga; UNLP; MP BZ-128 &nbsp; Dra. en Cs. Naturales; UNLP &nbsp; Bacterióloga Clínica e Industrial; UNLP; MP 7243<br>
-			Especialista en Embriología Clínica; Sociedad Argentina de Medicina Reproductiva (SAMeR)<br>
-			Embryology Laboratory Director (ELD); American Board of Bioanalysis (ABB); USA
-		</small>
+		<% info_count = 0 %>
+		<% info_collection = [] %>
+		<% TeamMember.all.each do |team_member| %>
+			<h4>
+				<%= team_member.name %>
+				<% if team_member.info.present? %>
+					<sup><%= info_count+=1 %></sup>
+					<% info_collection << team_member.info %>
+				<% end %>
+			</h4>
+			<p><%= team_member.job %></p>
+		<% end %>
+		<% info_collection.each_with_index do |info, index| %>
+			<div>
+				<small>
+					<sup><%= index + 1 %></sup>
+					<%= info.html_safe %>
+				</small>
+			</div>
+		<% end %>
 	</div>
 </section>

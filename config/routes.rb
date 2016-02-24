@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   resources :instructionals, path: 'instructivos'
   resources :schedules, path: 'horarios'
   resources :contacts, path: 'contactos'
+  resources :team_members
   
   get 'institucional' => 'static_pages#institutional', as: :institutional
   get 'informacion' => 'static_pages#information', as: :information
