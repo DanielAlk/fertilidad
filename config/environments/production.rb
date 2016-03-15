@@ -64,9 +64,10 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: ENV["WEBAPP_DOMAIN"] }
   config.action_mailer.smtp_settings = {
     address: ENV['NOTIFICATIONS_MAILER_ADDRESS'],
-    port: 25,
-    domain: ENV["DOMAIN_NAME"],
-    authentication: "plain",
+    port: ENV['NOTIFICATIONS_MAILER_PORT'],
+    domain: ENV["WEBAPP_DOMAIN"],
+    ssl: true,
+    authentication: :login,
     enable_starttls_auto: true,
     user_name: ENV['NOTIFICATIONS_MAILER_USERNAME'],
     password: ENV['NOTIFICATIONS_MAILER_PASSWORD']
