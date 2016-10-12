@@ -6,7 +6,7 @@
 			<% @image_galleries.each do |gallery| %>
 				<div class="col-xs-6 col-sm-3">
 					<%= link_to gallery, class: 'clean' do %>
-						<%= image_tag gallery.cover.url(:thumb), class: 'cover' %>
+						<%= image_tag gallery.cover(:thumb), class: 'cover' %>
 					<% end %>
 				</div>
 			<% end %>

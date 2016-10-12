@@ -8,9 +8,9 @@ class ImageGallery < ActiveRecord::Base
 		self.image_gallery_items
 	end
 
-	def cover
+	def cover(style)
 		item = self.items.first
-		return item.present? ? item.image : "gallery-image-default-original.jpg"
+		return item.present? ? item.image.url(style) : "gallery-image-default-original.jpg"
 	end
 
 end
