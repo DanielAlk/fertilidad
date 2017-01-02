@@ -75,7 +75,7 @@ Utils.navigation = function() {
 };
 
 Utils.startMap = function(elementId) {
-	var location = "Diagonal 73 & Calle 46, La Plata, Buenos Aires, Argentina";
+	var location = "Calle 58 529, Casco Urbano, B1900BPU La Plata, Buenos Aires";
 	var map_canvas = document.getElementById(elementId);
 	var geocoder = new google.maps.Geocoder();
 	var map = new google.maps.Map(map_canvas, {
